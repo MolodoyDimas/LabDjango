@@ -165,3 +165,10 @@ class MailingLogListView(LoginRequiredMixin, ListView):
         context['title'] = "Попытки рассылки"
         context['log_list'] = MailingLogs.objects.all()
         return context
+
+
+class MessageCreateView(LoginRequiredMixin, CreateView):
+    """Создание сообщения"""
+    model = Mailing
+    form_class = MailingForm
+    success_url = reverse_lazy('mailing:mailing_list')
