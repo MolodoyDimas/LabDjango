@@ -169,6 +169,6 @@ class MailingLogListView(LoginRequiredMixin, ListView):
 
 class MessageCreateView(LoginRequiredMixin, CreateView):
     """Создание сообщения"""
-    model = Mailing
+    model = Message
     form_class = MailingForm
     success_url = reverse_lazy('mailing:mailing_list')
